@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>CN-TF</artifactId>
+    <groupId>pt.isel.cn.landmarks</groupId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>LandmarksDomain</module>
+        <module>LandmarksStorage</module>
+        <module>InstanceManager</module>
+        <module>LandmarksServer</module>
+        <module>LandmarksClient</module>
+        <module>LandmarksApp</module>
+        <module>LandmarksContract</module>
+        <module>IPLookup</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.gantsign.maven</groupId>
+                <artifactId>ktlint-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>format-and-check</id>
+                        <goals>
+                            <goal>format</goal>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <failOnViolation>true</failOnViolation>
+                            <reporters>
+                                <reporter>
+                                    <name>plain</name>
+                                    <output>${project.build.directory}/ktlint.txt</output>
+                                    <properties>
+                                        <property>
+                                            <name>group_by_file</name>
+                                            <value>true</value>
+                                        </property>
+                                    </properties>
+                                </reporter>
+                            </reporters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

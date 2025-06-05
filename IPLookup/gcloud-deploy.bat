@@ -1,0 +1,1 @@
+gcloud functions deploy funcIPLookup --project=cn2425-t1-g06 --entry-point=pt.isel.cn.landmarks.iplookup.IPLookup --runtime=java21 --trigger-http --gen2 --region=europe-west1 --source=target/deployment --allow-unauthenticated

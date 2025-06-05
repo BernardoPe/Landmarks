@@ -1,4 +1,4 @@
-# CN2425TF - Cloud Landmark Detection System
+# Cloud Landmark Detection System
 
 A scalable, cloud system for automatic landmark detection in photos using Google Cloud Platform (GCP) services.
 
@@ -6,7 +6,7 @@ A scalable, cloud system for automatic landmark detection in photos using Google
 
 ## Overview
 
-CN2425TF enables users to:
+This system enables users to:
 
 - Submit images for landmark detection.
 - Retrieve identified monuments with geographic coordinates and confidence levels.
@@ -67,5 +67,14 @@ This system is built entirely on GCP services with support for autoscaling and f
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
+
+- [LandmarksDomain/](./LandmarksDomain/)          Core domain models and configuration
+- [LandmarksServer/](./LandmarksServer/)          gRPC server implementation
+- [LandmarksClient/](./LandmarksClient/)          gRPC client for user interaction
+- [LandmarksStorage/](./LandmarksStorage/)        Storage and retrieval of images and metadata
+- [LandmarksContract/](./LandmarksContract/)      Protocol buffers and gRPC service definitions
+- [LandmarksApp/](./LandmarksApp/)                Pub/Sub service for image analysis
+- [IPLookup/](./IPLookup/)                        Cloud Function for discovering active gRPC server IPs
+- [InstanceManager/](./InstanceManager/)          Manages lifecycle of instances in GCP
 
